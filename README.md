@@ -1,5 +1,5 @@
 # Tactical Traffic Engineering (TTE)
-Based off findings from ONOS-TACNET thesis and due to shortfalls with the ONOS application development support, this is a developmental network operator GUI for tactical traffic engineering for an ONOS SDN controller. For testing purposes we are utilizing Mininet to emulate our network.
+Based off findings from ONOS-TACNET thesis and due to shortfalls with the ONOS application development support, this is a developmental GUI for network operators to implement tactical traffic engineering controls using an ONOS SDN controller. For testing purposes we are utilizing Mininet to emulate our network.
 
 ## Prerequisites:
 ### First Time Installation and Configuration
