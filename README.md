@@ -3,17 +3,30 @@ Based off findings from ONOS-TACNET thesis and due to shortfalls with the ONOS a
 
 ## Prerequisites:
 ### First Time Installation and Configuration
+#### ONOS Installation
 Pull and run ONOS Docker image (Ref: https://github.com/jatj/sdn_onos/blob/master/INSTALL.md)
 ```
 sudo docker pull onosproject/onos
 sudo docker run -t -d -p 8181:8181 -p 8101:8101 -p 5005:5005 -p 830:830 --name onos onosproject/onos
 ```
-Login to ONOS (Username: ```onos```  Password: ```rocks```) and enable OpenFlow on ONOS (And any other ONOS applications you may want, like ReactiveForwarding)
+After creating the docker image, ensure to start the docker image.
+```
+sudo docker start onos
+```
+You can check current running dockers with the following:
+```
+sudo docker ps
+```
+Login to ONOS (Username: ```onos```  Password: ```rocks```)
 ```
 ssh -p 8101 onos@172.17.0.1
+```
+Enable OpenFlow on ONOS (And any other ONOS applications you may want, like ReactiveForwarding)
+```
 app activate org.onosproject.openflow
 app activate org.onosproject.fwd
 ```
+#### Mininet Installation
 Install Mininet (Ref: http://mininet.org/download/)
 ```
 git clone https://github.com/mininet/mininet
