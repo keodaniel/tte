@@ -1,8 +1,22 @@
 
 
 <script setup>
-import { ref } from 'vue';
+import { reactive, ref } from 'vue';
 import { VNetworkGraph } from 'v-network-graph';
+import * as vNG from "v-network-graph";
+
+
+const initialConfigs = vNG.defineConfigs({
+  node : {
+    label: {
+      visible: true,
+      direction: "south",
+      directionAutoAdjustment: false
+    }
+  }
+})
+
+const configs = reactive(initialConfigs)
 
 const nodes = ref({
   node1: { name: "SW_NOC" },
@@ -30,11 +44,15 @@ const layouts = ref({
   <div>
     <h1>Network Graph</h1>
   </div>
+  <div class="demo-control-panel">
+    <el-checkbox v-model="configs.node.label.directionAutoAdjustment">Enable auto adjustment</el-checkbox>
+  </div>
   <v-network-graph
     class="graph"
     :nodes="nodes"
     :edges="edges"
     :layouts="layouts"
+    :configs="configs"
   />
 </template>
 
